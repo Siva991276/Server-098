@@ -11,14 +11,12 @@ const AddUserByBatch = require("./Model/ByBatch");
 const ByList = require("./Model/ByList");
 const AddvideoData = require("./Model/LearnPath/Addvideo");
 const videoFile = require("./Model/LearnPath/AddVideoFile");
-<<<<<<< HEAD
 const paragMCQRouter = require("./Routes/ParagRoutes");
 
 // const McqData = require("./Model/Mcq Questions/Mcq");
 
 =======
-const paragMCQRouter = require('./Routes/ParagRoutes');
->>>>>>> 52d132a4e87344ffdc4625d247c011b4b375bb6e
+
 // const bodyParser = require("body-parser");
 
 const app = express();
@@ -1260,8 +1258,7 @@ app.delete(
 app.listen(port, () => {
   console.log(`Server running at ${port}`);
 });
-//kumar
-<<<<<<< HEAD
+
 
 app.use("/v1", require("./Routes/ChapterRoutes")); //api routes
 app.use("/v1", require("./Routes/MCQRoutes"));
@@ -1270,12 +1267,6 @@ app.use("/v2", paragMCQRouter);
 app.use("/v4", require("./Routes/CodeingBasic"));
 
 app.use("/assignedQB",require("./Routes/assignedQBRoutes"));
-=======
-app.use("/v1", require('./Routes/ChapterRoutes')) //api routes
-app.use('/v1',  require('./Routes/MCQRoutes'));
-app.use("/v1", require('./Routes/SubjectsRoutes')) 
-app.use('/v2',paragMCQRouter)
-app.use('/v4',require('./Routes/CodeingBasic'))
 
-//kumar
->>>>>>> 52d132a4e87344ffdc4625d247c011b4b375bb6e
+
+
