@@ -11,12 +11,7 @@ const AddUserByBatch = require("./Model/ByBatch");
 const ByList = require("./Model/ByList");
 const AddvideoData = require("./Model/LearnPath/Addvideo");
 const videoFile = require("./Model/LearnPath/AddVideoFile");
-const paragMCQRouter = require("./Routes/ParagRoutes");
-
-// const McqData = require("./Model/Mcq Questions/Mcq");
-
-=======
-
+const paragMCQRouter = require('./Routes/ParagRoutes');
 // const bodyParser = require("body-parser");
 
 const app = express();
@@ -181,13 +176,7 @@ app.delete("/deleteInstitute/:id", middleware, async (req, res) => {
     console.error(e.message, "deleteInstitute");
     return res.status(500).json(e.message);
   }
-});
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 52d132a4e87344ffdc4625d247c011b4b375bb6e
-app.get("/allAddInstitutes", async (req, res) => {
+});app.get("/allAddInstitutes", async (req, res) => {
   try {
     const allInstitutes = await AddInstituteData.find({});
     return res.json(allInstitutes);
@@ -280,13 +269,7 @@ app.post("/AddUsers", middleware, async (req, res) => {
     return res.status(500).json(e.message);
   }
 });
-
-<<<<<<< HEAD
-
-app.post("/UserDetailslogin", async (req, res) => {
-=======
 app.post("/UserDetailslogin", middleware, async (req, res) => {
->>>>>>> 52d132a4e87344ffdc4625d247c011b4b375bb6e
   const { userEmail, Password } = req.body;
 
   try {
@@ -1252,21 +1235,14 @@ app.delete(
   }
 );
 
-
-// app.use("/assignedQB",require("./Routes/assignedQBRoutes"));
-
 app.listen(port, () => {
   console.log(`Server running at ${port}`);
 });
+//kumar
+app.use("/v1", require('./Routes/ChapterRoutes')) //api routes
+app.use('/v1',  require('./Routes/MCQRoutes'));
+app.use("/v2", require('./Routes/SubjectsRoutes')) 
+app.use('/v2',paragMCQRouter)
+app.use('/v4',require('./Routes/CodeingBasic'))
 
-
-app.use("/v1", require("./Routes/ChapterRoutes")); //api routes
-app.use("/v1", require("./Routes/MCQRoutes"));
-app.use("/v2", require("./Routes/SubjectsRoutes"));
-app.use("/v2", paragMCQRouter);
-app.use("/v4", require("./Routes/CodeingBasic"));
-
-app.use("/assignedQB",require("./Routes/assignedQBRoutes"));
-
-
-
+//kumar
