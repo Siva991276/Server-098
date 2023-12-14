@@ -23,7 +23,7 @@ router.post('/addMCQ/:subjectId/:chapterId', async (req, res) => {
       correctAnswer,
       Explanation,
     } = req.body;
-    console.log(subjectId,chapterId,req.body,"sai")
+    
     // Find the subject by ID
     const existingSubject = await Subject.findById(subjectId);
     console.log(existingSubject)
@@ -33,7 +33,7 @@ router.post('/addMCQ/:subjectId/:chapterId', async (req, res) => {
 
     // Find the specific chapter within the subject
     const chapter = existingSubject.chapter.id(chapterId);
-    console.log(chapter)
+ 
 
     if (!chapter) {
       return res.status(404).json({ msg: 'Chapter not found', status: 'failed' });
@@ -155,7 +155,7 @@ router.put('/updateMCQ/:subjectId/:chapterId/:mcqId', async (req, res) => {
       correctAnswer,
       Explanation,
     } = req.body;
-    console.log(req.body,req.params,"sai")
+     
     // Find the subject by ID
     const existingSubject = await Subject.findById(subjectId);
 
