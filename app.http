@@ -382,6 +382,8 @@ token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjUyZDE0ZWNlNWNkYmUzZTg5
 "subjectTag":"coloud"
 }
 
+###
+GET http://localhost:4010/v4/getbasic
 
 
 

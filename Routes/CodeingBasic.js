@@ -215,6 +215,19 @@ router.put('/:subjectId/chapters/:chapterId/codingbasic/:codingbasicId', async (
       return res.status(500).json({ msg: 'Internal Server Error', status: 'failed' });
     }
   });
+  // http://localhost:4010/v4/getbasic
+  router.get('/getbasic', async (req, res) => {
+      try {
+        console.log(req.body,"sai")
+        const getbasic = await Subject.find();
+        res.json(getbasic);
+  
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server Error' });
+      }
+    });
+
   
 
 
